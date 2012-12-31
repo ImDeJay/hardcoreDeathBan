@@ -1,0 +1,10 @@
+name: DeathBan
+main: com.gmail.dejayyy.hardcore.dbMain
+description: 'Ban player upon death'
+version: 1.0
+author: ImDeJay
+
+commands: 
+  deathban:
+    aliases: db
+    usage: /<command>

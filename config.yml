@@ -1,0 +1,7 @@
+#DeathBan config
+
+#Time in mintes the player should be banned.
+banTime: 30
+
+#Message sent to player when they are kicked from server.
+banMSG: 'You died, come back in 30 minutes to try again!'
