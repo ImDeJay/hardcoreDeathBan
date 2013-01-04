@@ -41,9 +41,38 @@ public class dbMain extends JavaPlugin implements Listener {
 		
 		if(!(sender instanceof Player)){
 			
-			sender.sendMessage("You goofball, you cant run that command from console!");
-			
-			return true;
+			if(cmdL.equalsIgnoreCase("deathban") || cmdL.equalsIgnoreCase("db")){
+				
+				if(args[0].equalsIgnoreCase("unban")){
+					
+					if(this.playersFile.contains(args[1].toLowerCase())){
+						
+						this.getServer().getOfflinePlayer(args[1].toLowerCase()).setBanned(false);
+							
+						this.playersFile.set(args[1].toLowerCase(), null);
+							
+						this.savePlayerYML();
+						
+						sender.sendMessage(ChatColor.DARK_AQUA + "[DeathBan] " + ChatColor.AQUA + "Player removed from DeathBan list.");
+						
+						return true;
+							
+					}else{
+							
+						sender.sendMessage(ChatColor.DARK_AQUA + "[DeathBan] " + ChatColor.AQUA + "Player not on the DeathBan list.");
+							
+						return true;
+						
+					}
+					
+				}else{
+					
+					sender.sendMessage("You goofball, you cant run that command from console!");
+					
+					return true;
+					
+				}
+			}
 			
 		}
 		
